@@ -1,0 +1,24 @@
+// Version: 1.0.0
+type Inquiry__159127206 =
+  {
+    createdAt : Int;
+    email : Text;
+    fullName : Text;
+    id : Nat;
+    message : Text;
+    phone : Text;
+    propertyType : PropertyType__1007949632
+  };
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type PropertyType__1007949632 =
+  {#Commercial; #Investment; #Residential; #Retail};
+actor {
+  stable inquiries :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Inquiry__159127206]];
+      var elementIndex : Nat__490723111
+    };
+  stable state : {var nextId : Nat}
+};

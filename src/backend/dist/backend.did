@@ -1,0 +1,23 @@
+type PropertyType = 
+ variant {
+   Commercial;
+   Investment;
+   Residential;
+   Retail;
+ };
+type Inquiry = 
+ record {
+   createdAt: int;
+   email: text;
+   fullName: text;
+   id: nat;
+   message: text;
+   phone: text;
+   propertyType: PropertyType;
+ };
+service : {
+  getInquiryCount: () -> (nat) query;
+  listInquiries: () -> (vec Inquiry) query;
+  submitInquiry: (fullName: text, email: text, phone: text, propertyType:
+   PropertyType, message: text) -> (Inquiry);
+}

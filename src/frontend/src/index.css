@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Cormorant Garamond", serif;
+    --font-body: "Inter", sans-serif;
+    --font-mono: monospace;
+    --radius: 0.625rem;
+
+    --background: 0.99 0.005 55;
+    --foreground: 0.15 0 0;
+    --card: 0.97 0.01 55;
+    --card-foreground: 0.15 0 0;
+    --popover: 0.97 0.01 55;
+    --popover-foreground: 0.15 0 0;
+
+    --primary: 0.65 0.08 30;
+    --primary-foreground: 0.99 0.005 55;
+
+    --secondary: 0.93 0.02 65;
+    --secondary-foreground: 0.15 0 0;
+    --muted: 0.87 0.04 50;
+    --muted-foreground: 0.45 0.02 30;
+
+    --accent: 0.48 0.12 25;
+    --accent-foreground: 0.99 0.005 55;
+
+    --destructive: 0.55 0.2 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.87 0.04 50;
+    --input: 0.87 0.04 50;
+    --ring: 0.65 0.08 30;
+
+    --chart-1: 0.65 0.22 40;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.83 0.19 84;
+    --chart-5: 0.77 0.19 70;
+
+    --sidebar: 0.98 0 0;
+    --sidebar-foreground: 0.15 0 0;
+    --sidebar-primary: 0.35 0 0;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.95 0 0;
+    --sidebar-accent-foreground: 0.25 0 0;
+    --sidebar-border: 0.9 0 0;
+    --sidebar-ring: 0.35 0 0;
+  }
+
+  .dark {
+    --background: 0.145 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.18 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.22 0 0;
+    --popover-foreground: 0.95 0 0;
+
+    --primary: 0.8 0 0;
+    --primary-foreground: 0.145 0 0;
+
+    --secondary: 0.22 0 0;
+    --secondary-foreground: 0.85 0 0;
+    --muted: 0.22 0 0;
+    --muted-foreground: 0.55 0 0;
+
+    --accent: 0.8 0 0;
+    --accent-foreground: 0.145 0 0;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.145 0 0;
+
+    --border: 0.28 0 0;
+    --input: 0.28 0 0;
+    --ring: 0.8 0 0;
+
+    --chart-1: 0.49 0.24 264;
+    --chart-2: 0.7 0.17 162;
+    --chart-3: 0.77 0.19 70;
+    --chart-4: 0.63 0.27 304;
+    --chart-5: 0.65 0.25 16;
+
+    --sidebar: 0.18 0 0;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.8 0 0;
+    --sidebar-primary-foreground: 0.145 0 0;
+    --sidebar-accent: 0.22 0 0;
+    --sidebar-accent-foreground: 0.85 0 0;
+    --sidebar-border: 0.28 0 0;
+    --sidebar-ring: 0.8 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", sans-serif;
+    animation: page-fade-in 0.6s ease-out;
+  }
+  ::selection {
+    background-color: #b7a89a;
+    color: #1c1c1c;
+  }
+  .font-display {
+    font-family: "Cormorant Garamond", serif;
+  }
+}
+
+@layer utilities {
+  /* Hero background slow zoom */
+  @keyframes heroZoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+  /* Scroll indicator bounce */
+  @keyframes heroBounce {
+    0%,
+    100% {
+      transform: translateY(0) translateX(-50%);
+    }
+    50% {
+      transform: translateY(8px) translateX(-50%);
+    }
+  }
+  /* Cinematic hero background element */
+  .hero-zoom-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2a1f1a 0%, #1a1410 45%, #0d0a07 100%);
+    animation: heroZoom 20s ease-in-out infinite alternate;
+    transform-origin: center center;
+    z-index: 0;
+  }
+  /* Scroll indicator bounce utility */
+  .hero-bounce {
+    animation: heroBounce 2.2s ease-in-out infinite;
+  }
+
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .hover-lift {
+    transition: transform 0.3s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-3px);
+  }
+  .image-hover-zoom img {
+    transition: transform 0.6s ease;
+  }
+  .image-hover-zoom:hover img {
+    transform: scale(1.05);
+  }
+  .nav-blur {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(247, 246, 242, 0.9);
+  }
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .grain-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/assets/grain.png");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @keyframes page-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .hero-image {
+    animation: hero-zoom 20s ease-in-out infinite alternate;
+  }
+  @keyframes hero-zoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+}

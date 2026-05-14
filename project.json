@@ -1,0 +1,29 @@
+{
+  "overview": "Ultra-modern, editorial-style luxury real estate website for Abode Properties (Indore). A premium property consultancy brand experience — cinematic hero, immersive property showcase, glassmorphism testimonials, interactive process timeline, and a contact inquiry form. Designed to feel like a luxury architecture magazine, not a broker portal.",
+  "features": [
+    "Cinematic hero with slow-zoom animation and trust indicators",
+    "Horizontal-scroll editorial property showcase (Residential, Commercial, Retail, Investment)",
+    "Magazine-style asymmetric featured properties grid with hover effects",
+    "Why Abode split-screen philosophy section",
+    "Glassmorphism testimonial carousel with auto-rotation",
+    "Interactive 4-step process timeline with animated connector",
+    "Emotional lifestyle imagery section",
+    "Warm gradient CTA section with consultation booking",
+    "Contact inquiry form with Motoko backend storage",
+    "Transparent blur-on-scroll navigation",
+    "Mobile-first luxury responsive design",
+    "Subtle premium micro-interactions throughout"
+  ],
+  "category": "real-estate",
+  "tags": [
+    "real-estate",
+    "luxury",
+    "editorial",
+    "showcase",
+    "indore",
+    "property",
+    "marketing",
+    "premium"
+  ],
+  "last_updated": "2026-05-14T07:30:22.664Z"
+}
